@@ -13,27 +13,34 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-  
-  position: relative;
-  height: 520px;
-  background-image: url("https://i.pinimg.com/1200x/f6/ba/76/f6ba764486bf6fd7bb08c1684f401080.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  background:linear-gradient(rgba(20,60,35,0.9), rgba(20,60,35,0.9)),;
+    position: relative;
+    height: 520px;
+    /* Background image with dark overlay using linear-gradient */
+    background: linear-gradient(rgba(20,60,35,0.9), rgba(20,60,35,0.9)),
+                url("https://i.pinimg.com/1200x/98/85/f3/9885f38dc02d4aad94ffe92bfc728894.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* aligns content to left */
+    padding-left: 8%;
+    color: #fff; /* ensures text is readable */
 }
+
+/* Optional: blur effect */
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.75);
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 60, 35, 0.4); /* semi-transparent dark overlay */
+    backdrop-filter: blur(3px); /* optional soft blur */
 }
+
+/* Hero content stays above overlay */
 .hero-content {
-  position: relative;
-  padding-left: 8%;
-  max-width: 700px;
+    position: relative;
+    max-width: 600px; /* limit content width */
+    z-index: 1;
 }
+
 .badge {
   display: inline-block;
   background: #f3e6c9;
@@ -46,15 +53,15 @@ body {
 .hero h1 {
   font-size: 64px;
   margin: 20px 0;
-  color: #1f2f26;
+  color: #fff; /* white text over dark overlay */
 }
 .hero h1 span {
-  color: #4F6F52;
+  color: #D99A4A;
 }
 .hero p {
   font-family: Arial;
   font-size: 20px;
-  color: #5f6f66;
+  color: #e6f0e2;
   line-height: 1.6;
 }
 .buttons {
@@ -63,7 +70,7 @@ body {
   gap: 20px;
 }
 .btn-primary {
-  background: #4F6F52;
+  background: #4F6F52; /* green main theme */
   color: #fff;
   padding: 16px 34px;
   border-radius: 14px;
@@ -72,7 +79,7 @@ body {
 }
 .btn-outline {
   background: transparent;
-  color: #4F6F52;
+  color: #fff;
   padding: 16px 34px;
   border-radius: 14px;
   border: 2px solid #4F6F52;
